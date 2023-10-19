@@ -1,0 +1,33 @@
+<!--<input type="text" #name (input)="setName(name.value)"/>-->
+<input type="text" name="name" [ngModel]="getName()" (ngModelChange)="setName($event)" />
+
+<p>Nombre: {{getName()}}</p>
+
+<p>Edad:<span [innerHTML]="getAge()"></span></p>
+<p>Organización: {{getOrganization()}}</p>
+
+<form #formulario="ngForm" (ngSubmit)="mostrar(formulario)" class="form-group row">
+    <div class="form-group col-md-3">
+        <label>Nombre</label>
+        <input type="text" name="name" class="form-control" ngModel required="true"/><br>
+    </div>
+    <div class="form-group col-md-3">
+        <label>Edad</label>
+        <input type="number" name="age" class="form-control" min="0" ngModel required="true"/><br>
+    </div>
+    <div class="form-group col-md-3">
+        <label>Organización</label>
+        <input type="text" name="organization" class="form-control" ngModel required="true"/><br>
+    </div>
+    <input type="submit" value="Registrar" class="btn btn-primary" />
+
+</form>
+
+<div *ngIf="condicion; else elseBlock">
+    <p><span>Nombre: {{getName()}}</span></p>
+    <p><span>Edad: </span>{{getAge()}}</p>
+    <p><span>Organización: </span>{{getOrganization()}}</p>
+</div>
+<ng-template #elseBlock>
+    <p>Cuando la condición está en {{condicion}} se muestra este bloque</p>
+</ng-template>

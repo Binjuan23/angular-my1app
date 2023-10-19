@@ -1,0 +1,13 @@
+<h1 style="text-align: center;">{{title}}</h1>
+<div *ngIf="condicion; else elseBlock">
+   <p>No hay empleados registrados</p>
+</div>
+<ng-template #elseBlock>
+    <ul>
+        <li *ngFor="let persona of personas">
+            Hola, mi nombre es {{persona.name}}, tengo {{persona.age}} años y trabajo en {{persona.organization}}.
+        </li>
+    </ul>
+</ng-template>
+<app-empleado (datosFormularioEnviados)="recibirDatos($event)"></app-empleado>
+
