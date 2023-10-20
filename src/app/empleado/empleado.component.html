@@ -6,6 +6,8 @@
 <p>Edad:<span [innerHTML]="getAge()"></span></p>
 <p>Organización: {{getOrganization()}}</p>
 
+<p>Yo soy {{miNombre}} y he enviado esta variable desde el padre</p>
+
 <form #formulario="ngForm" (ngSubmit)="mostrar(formulario)" class="form-group row">
     <div class="form-group col-md-3">
         <label>Nombre</label>

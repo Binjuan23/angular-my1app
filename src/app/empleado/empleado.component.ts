@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Persona } from '../interfaces/persona.interface';
 
@@ -10,7 +10,7 @@ import { Persona } from '../interfaces/persona.interface';
   styleUrls: ['./empleado.component.css']
 })
 export class EmpleadoComponent implements OnInit {
-
+  @Input() miNombre:string;
   @Output() datosFormularioEnviados = new EventEmitter<any>();
 
   private persona: Persona = {
