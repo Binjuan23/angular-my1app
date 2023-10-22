@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-component',
-  templateUrl: './home-component.component.html',
-  styleUrls: ['./home-component.component.css']
+  selector: 'app-homeC',
+  templateUrl: './homeC.component.html',
+  styleUrls: ['./homeC.component.css']
 })
-export class HomeComponentComponent implements OnInit {
+export class HomeCComponent implements OnInit {
   message = "I'm read only!";
   canEdit = false;
   constructor() { }
