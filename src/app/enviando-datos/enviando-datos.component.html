@@ -1,2 +1,26 @@
 <p>enviando-datos works!</p>
 <p>Este es el dato enviado: {{nombre}}</p>
+<ng-container *ngTemplateOutlet="contextooo ; context: persona"></ng-container>
+<ng-container [ngTemplateOutlet]="prueba"></ng-container>
+
+<ng-template #prueba>
+    <div>
+        Elige tu personaje favorito
+        (<label><input type="checkbox" checked (change)="condicion = !condicion">muestra restauración</label>)
+    </div>
+    <select [(ngModel)]="persona">
+        <ng-container *ngFor="let l of lista">
+            <ng-container *ngIf="condicion || l.organization !== 'Restauración'">
+                <option [ngValue]="l">{{l.name}} ({{l.organization}})</option>
+            </ng-container>
+        </ng-container>
+    </select>
+
+    <p *ngIf="persona" style="color:greenyellow; text-align: center;">La persona elegida es {{persona.name}}</p>
+
+</ng-template>
+
+
+<ng-template #contextooo let-nombre="name">
+    <p *ngIf="persona" style="color:red; text-align: center;">La persona elegida es {{nombre}}</p>
+</ng-template>

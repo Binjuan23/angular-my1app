@@ -20,11 +20,9 @@ export class EmpleadosComponent implements OnInit {
     }
 
     recibirDatos(datos: any){
-        console.log(datos);
         this.condicion=false;
         this.servicio.mostrarMensaje(`Estos son los datos que se insertarán en la lista: \n Nombre: ${datos.name}\n Edad: ${datos.age}\n Organización: ${datos.organization}`);
         this.personas.push(datos);
-        console.log(this.personas);
     }
 
 }
